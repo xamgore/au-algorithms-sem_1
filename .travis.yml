@@ -16,8 +16,8 @@ cache:
     - node_modules
 
 before_script:
-  - (cd ast && yarn)
-  - (cd telegram && yarn)
-  - sudo chmod +x ./script/build.sh
+  - (cd conspectus-framework/ast && yarn)
+  - (cd conspectus-framework/telegram && yarn)
+  - sudo chmod +x ./conspectus-framework/script/build.sh
 
-script: python3 ./script/build.py
+script: python3 ./conspectus-framework/script/build.py
