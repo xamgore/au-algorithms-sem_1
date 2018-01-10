@@ -1,0 +1,3 @@
+[submodule "conspectus-framework"]
+	path = conspectus-framework
+	url = https://github.com/demiurg906/conspectus-framework
