@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Заголовок</title>
+<!-- Search Engine -->
+<meta name="description" content="Система непересекающихся множеств (Disjoint sets) Операции: Реализация: Утверждение:  у корня с рангом  k  не менее, чем  2^k-1  потомка (у соотв. множеств">
+<meta name="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Заголовок">
+<meta itemprop="description" content="Система непересекающихся множеств (Disjoint sets) Операции: Реализация: Утверждение:  у корня с рангом  k  не менее, чем  2^k-1  потомка (у соотв. множеств">
+<meta itemprop="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Заголовок">
+<meta name="twitter:description" content="Система непересекающихся множеств (Disjoint sets) Операции: Реализация: Утверждение:  у корня с рангом  k  не менее, чем  2^k-1  потомка (у соотв. множеств">
+<meta name="twitter:image:src" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter - Article -->
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Заголовок">
+<meta property="og:description" content="Система непересекающихся множеств (Disjoint sets) Операции: Реализация: Утверждение:  у корня с рангом  k  не менее, чем  2^k-1  потомка (у соотв. множеств">
+<meta property="og:image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<meta property="og:type" content="article">
+<!-- Open Graph - Article -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://demiurg906.github.io/au-algorithms-sem_1/assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js" integrity="sha256-MRn7pN9LOBMrkp+8F2t5xb/92V1irzXp/dl5tUTwEgE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/xpath.js" type="text/javascript"></script>
+<script>newIssue="https://github.com/demiurg906/au-algorithms-sem_1/issues/new"</script>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/load.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax:    {
+    inlineMath:  [['$','$'],  ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    displayAlign: "center"
+    // processEscapes: true
+  },
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+  <div id="mistake">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.938 402.938"><path d="M401.785 33.437C399.28 18.683 389.61 16.48 384.07 16.48c-22.935 0-65.053 36.684-109.644 75.52-18.23 15.88-37.083 32.3-53.502 45.048-5.858 4.548-11.803 9.103-18.097 13.924-31.276 23.96-66.726 51.12-94.16 80.356-26.887 28.65-42.593 55.62-47.676 81.98L4.12 364.683c-5.122 4.628-5.523 12.532-.896 17.655 2.468 2.732 5.867 4.12 9.28 4.12 2.987 0 5.984-1.063 8.375-3.223l47.816-43.194c2.31.634 5.016.963 8.19.963 27.39 0 93.534-24.866 153.857-57.84l6.043-3.305L226.11 269.8l17.888 5.932 1.947-1.13c15.867-9.21 30.165-18.41 42.496-27.338 2.19-1.586 4.45-3.292 7.115-5.372l3.87-3.02-11.223-14.93 20.26 7.21 2.218-2.02c15.51-14.13 29.805-30.467 42.486-48.554l2.428-3.462-18.606-18.342 25.257 8.17 2.054-3.37c28.307-46.454 43.02-97.535 37.485-130.137z"/></svg>
+  </div>
+
+  <article class="content">
+      
+
+      
+      <div class="navigation">
+        <a href="lec_1_13.html">← взад</a>
+        <a href="index.html">к оглавлению</a>
+        <a href="lec_1_15.html">вперёд →</a>
+      </div>
+      
+      <h3 id="Система-непересекающихся-множеств-disjoint-sets"><a aria-hidden="true" href="#Система-непересекающихся-множеств-disjoint-sets"><span class="icon icon-link"></span></a>Система непересекающихся множеств (Disjoint sets)</h3>
+<p><strong>Операции:</strong></p>
+<pre><code class="language-python">make_set(v)   # создание нового множества
+find(v)       # принимает вершину и возвращает представителя его множества
+union(s1, s2) # объединяет два множества
+</code></pre>
+<p><strong>Реализация:</strong></p>
+<pre><code class="language-python">parent = [None for _ in range(n)]
+rank = [0 for _ in range(n)]  # высота дерева множества
+
+# O(1)
+def make_set(v):
+    parent[v] = v
+    rank[v] = 0
+
+# O(log n)
+# возвращает корневую вершину эл-та v
+def find(v):
+    while v !=  parent[v]:
+        v = parent[v]
+    return v
+
+# O(1)
+# s1 и s2 -- корневые вершины
+def union(s1, s2):
+    if rank[s1] > rank[s2]:
+        parent[s2] = s1
+    elif rank[s1] &#x3C; rank[s2]:
+        parent[s1] = s2
+    else:
+        parent[s1] = s2
+        rank[s2] += 1
+</code></pre>
+<p><strong>Утверждение:</strong> у корня с рангом <span class="inlineMath">$k$</span> не менее, чем <span class="inlineMath">$2^k-1$</span> потомка (у соотв. множества не менее, чем <span class="inlineMath">$2^k$</span> элементов).
+<strong>Док-во:</strong> по индукции. База очевидна. <strong>И.п.</strong>: есть два корня с не менее чем <span class="inlineMath">$2^k-1$</span> потомками; из реализации видно, что ранг у корня объединения будет не менее <span class="inlineMath">$(2^k-1) + (2^k-1) + 1 = 2^{k+1} - 1$</span>.</p>
+<p>Аналогично можно доказать, что у дерева с корнем ранга <span class="inlineMath">$k$</span> глубина равняется <span class="inlineMath">$k$</span>.</p>
+<p><strong>Следствие:</strong> <code>find</code> для СНМ с рангами работает за <span class="inlineMath">$O(\log n)$</span>.</p>
+<h5 id="Эвристика-сжатия-пути"><a aria-hidden="true" href="#Эвристика-сжатия-пути"><span class="icon icon-link"></span></a>Эвристика сжатия пути</h5>
+<pre><code class="language-python">def find(v):
+    if v !=  parent[v]:
+        parent[v] = find(parent[v])
+    return parent[v]
+</code></pre>
+<p>Замечания:
+1. Ранги не соответствуют высоте дерева
+2. Утверждение про минимальное количество элементов в дереве осталось верным
+3. Если вершина перестала быть корневой, то ее ранг зафиксировался и больше не изменится
+4. Ранг вершины может только увеличиваться
+5. <code>rank[parent[v]] > rank[v]</code></p>
+<p><strong>Утверждение:</strong> вершин ранга <span class="inlineMath">$k$</span> не более, чем <span class="inlineMath">$\frac n {2^k}$</span>.</p>
+<p><strong>Время работы:</strong> Предположим, что мы делаем <span class="inlineMath">$m\geq n$</span> операций <code>find</code> на СНМ размера <span class="inlineMath">$n$</span>. Эти <span class="inlineMath">$m$</span> вызовов <code>find</code> требуют <span class="inlineMath">$O(m\cdot\log^* n)$</span> операций <span class="inlineMath">$\Rightarrow$</span> амортизированное время работы <code>find</code> -- <span class="inlineMath">$O(\log^* n)$</span>
+<strong>Доказательство:</strong> разобьем ранги на промежутки <span class="inlineMath">$[0], [1], [2], [3, 2^2], [5, 6,..., 2^4], [16+1,...,2^{16}], [65537,...,2^{65536}],...,[k+1,...,2^k]$</span>.
+Этих промежутков <span class="inlineMath">$\log^* n$</span> штук.</p>
+<p>В СНМ есть два типа ребер -- внутренние и внешние. Внутреннее ребро -- <code>rank[v]</code> и <code>rank[parent[v]]</code> лежат в одном промежутке. Внешнее ребро -- ранги в разных промежутках.
+<code>find</code> может заменить внутреннее на внешнее, но не обратно.</p>
+<p><strong>Утверждение:</strong> в каждой рекурсивной цепочке <code>find</code> не более <span class="inlineMath">$\log^* n$</span> внешних ребер (т.к. больше промежутков нет).</p>
+<p><strong>Утверждение:</strong> любая вершина ранга из промежутка <span class="inlineMath">$[k+1,...,2^k]$</span> учавствует в не более чем <span class="inlineMath">$2^k$</span> переходов по внутренним ребрам (больше значений в промежутке нету).</p>
+<p><strong>Утверждение:</strong> в каждом промежутке происходит не более <span class="inlineMath">$n$</span> переходов по внутренним ребрам: промежутков <span class="inlineMath">$[k+1,...,2^k]$</span> штук; переходов: <span class="inlineMath">$\sum\limits_{i=k+1}^{2^k\approx \infty} 2^k\cdot \frac n {2^i} = \frac n 2 + \frac n 4 + \frac n 8 + ... \leq n$</span> штук.</p>
+<p><strong>Итого:</strong> <span class="inlineMath">$m$</span> операций <code>find</code>.
+Число переходов по ребрам: <span class="inlineMath">$m$</span> переходов по ребрам, из которых <span class="inlineMath">$m\cdot\log^* n$</span> переходов по внешним ребрам, <span class="inlineMath">$n\cdot\log^* n$</span> переходов по внутренним ребрам <span class="inlineMath">$=O(m\log^* n)\ \Rightarrow$</span> амортизированная стоимость одной операции <code>find</code>: <span class="inlineMath">$O(\log^* n)$</span>.</p>
+<p>Страница на <a href="http://neerc.ifmo.ru/wiki/index.php?title=%D0%A1%D0%9D%D0%9C_(%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_%D0%BB%D0%B5%D1%81%D0%B0_%D0%BA%D0%BE%D1%80%D0%BD%D0%B5%D0%B2%D1%8B%D1%85_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8C%D0%B5%D0%B2)">neerc.ifmo</a>.</p>
+<script>
+var terms = {};
+</script>
+
+      
+      <div class="navigation">
+          <a href="lec_1_13.html">← взад</a>
+          <a href="index.html">на главную</a>
+          <a href="lec_1_15.html">вперёд →</a>
+      </div>
+      
+
+      
+  </article>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/popup.js"></script>
+</body>
+</html>

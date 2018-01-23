@@ -1,0 +1,23 @@
+sudo: enabled
+dist: trusty
+
+language: python
+python:
+  - "3.6"
+
+install:
+  - pip install regex lxml requests textile cssselect jinja2
+
+cache:
+  yarn: true
+  pip: true
+  custom_install: true
+  directories:
+    - node_modules
+
+before_script:
+  - (cd conspectus-framework/ast && yarn)
+  - (cd conspectus-framework/telegram && yarn)
+  - sudo chmod +x ./conspectus-framework/script/build.sh
+
+script: python3 ./conspectus-framework/script/build.py

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Заголовок</title>
+<!-- Search Engine -->
+<meta name="description" content="QuickSort Худший случай: В худшем случае массив будет разбиваться на куски размера  1  и  n - 1 . Это осуществляется, если исходный массив отсортирован. В">
+<meta name="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Заголовок">
+<meta itemprop="description" content="QuickSort Худший случай: В худшем случае массив будет разбиваться на куски размера  1  и  n - 1 . Это осуществляется, если исходный массив отсортирован. В">
+<meta itemprop="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Заголовок">
+<meta name="twitter:description" content="QuickSort Худший случай: В худшем случае массив будет разбиваться на куски размера  1  и  n - 1 . Это осуществляется, если исходный массив отсортирован. В">
+<meta name="twitter:image:src" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter - Article -->
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Заголовок">
+<meta property="og:description" content="QuickSort Худший случай: В худшем случае массив будет разбиваться на куски размера  1  и  n - 1 . Это осуществляется, если исходный массив отсортирован. В">
+<meta property="og:image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<meta property="og:type" content="article">
+<!-- Open Graph - Article -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://demiurg906.github.io/au-algorithms-sem_1/assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js" integrity="sha256-MRn7pN9LOBMrkp+8F2t5xb/92V1irzXp/dl5tUTwEgE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/xpath.js" type="text/javascript"></script>
+<script>newIssue="https://github.com/demiurg906/au-algorithms-sem_1/issues/new"</script>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/load.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax:    {
+    inlineMath:  [['$','$'],  ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    displayAlign: "center"
+    // processEscapes: true
+  },
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+  <div id="mistake">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.938 402.938"><path d="M401.785 33.437C399.28 18.683 389.61 16.48 384.07 16.48c-22.935 0-65.053 36.684-109.644 75.52-18.23 15.88-37.083 32.3-53.502 45.048-5.858 4.548-11.803 9.103-18.097 13.924-31.276 23.96-66.726 51.12-94.16 80.356-26.887 28.65-42.593 55.62-47.676 81.98L4.12 364.683c-5.122 4.628-5.523 12.532-.896 17.655 2.468 2.732 5.867 4.12 9.28 4.12 2.987 0 5.984-1.063 8.375-3.223l47.816-43.194c2.31.634 5.016.963 8.19.963 27.39 0 93.534-24.866 153.857-57.84l6.043-3.305L226.11 269.8l17.888 5.932 1.947-1.13c15.867-9.21 30.165-18.41 42.496-27.338 2.19-1.586 4.45-3.292 7.115-5.372l3.87-3.02-11.223-14.93 20.26 7.21 2.218-2.02c15.51-14.13 29.805-30.467 42.486-48.554l2.428-3.462-18.606-18.342 25.257 8.17 2.054-3.37c28.307-46.454 43.02-97.535 37.485-130.137z"/></svg>
+  </div>
+
+  <article class="content">
+      
+
+      
+      <div class="navigation">
+        <a href="lec_1_04.html">← взад</a>
+        <a href="index.html">к оглавлению</a>
+        <a href="lec_1_06.html">вперёд →</a>
+      </div>
+      
+      <h2 id="quicksort"><a aria-hidden="true" href="#quicksort"><span class="icon icon-link"></span></a>QuickSort</h2>
+<pre><code class="language-python">def quicksort(a):
+    random.shuffle(a)
+    quicksort(a, 0, len(a))
+
+def quicksort(a, l, r):
+    if l &#x3C; r:
+        return
+    # выбираем опорный элемент x
+    px = pivot(a, l, r)
+    # разбиваем все элементы массива
+    # на куски меньше x и больше x
+    m = partition(a, l, r, px)
+    quicksort(a, l, m)
+    quicksort(a, m + 1, r)
+
+def partition(a, l, r, px):
+    # время работы O(n)
+    a[px], a[r] = a[r], a[px]
+    m = l
+    for p in range(l, r):
+        if a[p] &#x3C; a[r]:
+            a[p], a[m] = a[m], a[p]
+            m += 1
+    a[m], a[r] = a[r], a[m]
+    # m -- индекс опрного элемента после разбиения
+    return m
+
+def pivot(a, l, r):
+    # дубовый выбор опорного элемента
+    return l
+    # среднее
+    return (l + r - 1) / 2
+    # крутой вариант, даст элемент из середины отсортированного массива
+    # если медиана считается за O(n), то вообще заебись
+    # но тогда у сортировки получается большая, так что нафиг
+    # *как-то противоречиво получилось
+    return median(a, l, r)
+    # тоже неплохо
+    return median(a[l], a[(l + r) / 2], a[r])
+    # основной на практике вариант
+    return random.choice(a[l:r])
+</code></pre>
+<p><strong>Худший случай:</strong>
+В худшем случае массив будет разбиваться на куски размера <span class="inlineMath">$1$</span> и <span class="inlineMath">$n - 1$</span>. Это осуществляется, если исходный массив отсортирован. В таком случае алгоритм будет работать <span class="inlineMath">$T(n) = T(1) + T(n - 1) + O(n) = \Theta(n^2)$</span>.</p>
+<p><strong>Средний случай:</strong>
+В среднем случае происходит неплохое разбиение, примерно на равные куски. Время работы <span class="inlineMath">$T(n) = T(\frac n4) + T(\frac {3n} 4) + \Theta(n) \leq 2T(\frac {3n} 4) + O(n) = O(n \log n)$</span></p>
+<p><strong>"Хорошее" разбиение:</strong>
+1. <span class="inlineMath">$T(n) = T(n - 1000) + T(1000) + O(n)$</span> -- плохое в ассимптотическом смысле
+2. <span class="inlineMath">$T(n) = T(0.99 n) + T(0.01 n) + O(n)$</span> -- хорошее, т.к. коэффициент влияет лишь на основание логарифма</p>
+<h3 id="Вероятностные-алгоритмы"><a aria-hidden="true" href="#Вероятностные-алгоритмы"><span class="icon icon-link"></span></a>Вероятностные алгоритмы</h3>
+<ol>
+<li>Расширим модель, добавив функцию <code>rand()</code>, возвращающую случайное число</li>
+<li>Добавляем к машине Тьюринга еще одну входную ленту, на которой записаны случайные биты. <code>A(x, r)</code>, <code>x</code> -- входные данные, <code>r</code> -- случайные данные, <code>A</code> -- обычный детерминированный алгоритм</li>
+</ol>
+<p>Есть два типа вероятностных алгоримов:
+1. "<strong>Лас-Вегас</strong>" -- алгоритм дает точное решение, но иногда работает долго
+2. "<strong>Монте-Карло</strong>" -- алгоритм всегда работает быстро, но дает только приближенное решение</p>
+<p><a class="term">QuickSort</a> -- "Лас-Вегас" алгоритм.</p>
+<h4 id="Анализ-quicksort"><a aria-hidden="true" href="#Анализ-quicksort"><span class="icon icon-link"></span></a>Анализ QuickSort:</h4>
+<p>Предпологаем, что все элементы различны.</p>
+<p><strong>Мат. ожидание средней глубины рекурсии</strong>:
+Пусть хорошее разбиение <span class="inlineMath">$[\frac 14; \frac 34]$</span>
+<span class="inlineMath">$P[\#\text{разбиение хорошее}] = \frac 12$</span>
+Вызываем <code>pivot</code> до тех пор, пока разбиение не станет хорошим.
+<span class="inlineMath">$E[\#\text{число разбиений, пока не получим хорошее}] = 1\cdot\frac 12 + 2 \cdot\frac1 4 + 3 \cdot\frac1 8 + ... = 2$</span>
+<span class="inlineMath">$E[\#] = p\cdot 1 + (1 - p)[1+ E[\#]] \Rightarrow E[\#]=\frac 1p$</span></p>
+<p>Если не модифицировать разбиение, то средний размер куска дерева, в котором есть плохое разбиение и следующее за ним хорошее <span class="inlineMath">$=2$</span>.</p>
+<p><span class="inlineMath">$E[\#\text{глубины рекурсии самой левой ветви}] \leq E[\#\text{глубины, на которой массив уменьшился в два раза}] + E[\#\text{глубины для}\frac n2]$</span>
+<span class="inlineMath">$R(n) \leq 2 + R(\frac n2), \ R(1) = 1 \Rightarrow R(n) \leq O(\log n)$</span>.
+Т.о. средняя глубина рекурсии <span class="inlineMath">$O(\log n)$</span></p>
+<h4 id="Сложность-вероятностного-алоритма"><a aria-hidden="true" href="#Сложность-вероятностного-алоритма"><span class="icon icon-link"></span></a>Сложность вероятностного алоритма:</h4>
+<p>Сложность -- это мат.ожидание количества операций.
+Это называется "сложность в среднем".</p>
+<p><strong>Сложность QuickSort</strong>:
+<span class="inlineMath">$E[\#\text{количество сравнений}] = \sum\limits_{i=1}^{n-1}\sum\limits_{j=i+1}^n 1\cdot P[\text{сравним i и j}] = \sum\limits_{i=1}^{n-1}\sum\limits_{j=i+1}^n \frac 2 {j - i + 1}=$</span>
+<span class="inlineMath">$= \sum\limits_{i=1}^{n-1}\sum\limits_{k=1}^{n-i} \frac 2 {k+1} \leq \sum\limits_{i=1}^{n-1} \ln n = O(n \log n)$</span></p>
+<p><strong>Замечание:</strong> тот же анализ рабтает для детерменированного <code>pivot</code> (например, первый элемент) и равномерного распределения на входах.</p>
+<p><strong>Варианты QuickSort:</strong>
+1. <a class="term">IntroSort</a>: запускает QuickSort и следит за глубиной рекурсии. Если глубина больше <span class="inlineMath">$C\log n$</span>, то запускаем, например, HeapSort, на всем массиве.
+2. QuickSort3: в <code>partition</code> делим массив на три части -- меньше опорного, равные ему, большие его.
+3. QuickSortStable: <code>partition</code> будет рекурсивный и использовать циклические сдвиги. <span class="inlineMath">$O(n\log^2 n)$</span>.
+4. QuickSortRec: гарантирует глубину рекурсии <span class="inlineMath">$\Theta(\log n)$</span>.</p>
+<pre><code class="language-python">def quicksort_rec(a, l, r)):
+    while r - l > 0:
+        px = pivot(a, l, r)
+        m = partition(a, l, r, px)
+        if m - l > (r - l) // 2:
+            quicksort_rec(a, m + 1, r)
+            r = m - 1
+        else:
+            quicksort_rec(a, l, m)
+            l = m + 1
+</code></pre>
+<script>
+var terms = {"QuickSort": {"wiki": {"type": "standard", "title": "\u0411\u044b\u0441\u0442\u0440\u0430\u044f \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "namespace": {"id": 0, "text": ""}, "titles": {"canonical": "\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "normalized": "\u0411\u044b\u0441\u0442\u0440\u0430\u044f \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "display": "\u0411\u044b\u0441\u0442\u0440\u0430\u044f \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430"}, "thumbnail": {"source": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", "width": 280, "height": 214}, "revision": "93128879", "tid": "49a42bc8-69d1-11e8-a85a-8e3a0331edd8", "content_urls": {"desktop": {"page": "https://ru.wikipedia.org/wiki/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "revisions": "https://ru.wikipedia.org/wiki/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430?action=history", "edit": "https://ru.wikipedia.org/wiki/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430?action=edit", "talk": "https://ru.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430"}, "mobile": {"page": "https://ru.m.wikipedia.org/wiki/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "revisions": "https://ru.m.wikipedia.org/wiki/Special:History/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "edit": "https://ru.m.wikipedia.org/wiki/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430?action=edit", "talk": "https://ru.m.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430"}}, "api_urls": {"summary": "https://ru.wikipedia.org/api/rest_v1/page/summary/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "metadata": "https://ru.wikipedia.org/api/rest_v1/page/metadata/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "references": "https://ru.wikipedia.org/api/rest_v1/page/references/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "media": "https://ru.wikipedia.org/api/rest_v1/page/media/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "edit_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", "talk_page_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0411\u044b\u0441\u0442\u0440\u0430\u044f_\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430"}, "extract": "\u0411\u044b\u0441\u0442\u0440\u0430\u044f \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430, \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430 \u0425\u043e\u0430\u0440\u0430, \u0447\u0430\u0441\u0442\u043e \u043d\u0430\u0437\u044b\u0432\u0430\u0435\u043c\u0430\u044f qsort\u00a0\u2014 \u0448\u0438\u0440\u043e\u043a\u043e \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u044b\u0439 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438, \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u0439 \u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438\u043c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u043e\u043c \u0427\u0430\u0440\u043b\u044c\u0437\u043e\u043c \u0425\u043e\u0430\u0440\u043e\u043c \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u0435\u0433\u043e \u0440\u0430\u0431\u043e\u0442\u044b \u0432 \u041c\u0413\u0423 \u0432 1960\u00a0\u0433\u043e\u0434\u0443.", "extract_html": "<p><b>\u0411\u044b\u0441\u0442\u0440\u0430\u044f \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430</b>, <b>\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430 \u0425\u043e\u0430\u0440\u0430</b>, \u0447\u0430\u0441\u0442\u043e \u043d\u0430\u0437\u044b\u0432\u0430\u0435\u043c\u0430\u044f <b><span style=\"font-style:italic;\">qsort</span></b>\u00a0\u2014 \u0448\u0438\u0440\u043e\u043a\u043e \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u044b\u0439 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438, \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u0439 \u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438\u043c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u043e\u043c \u0427\u0430\u0440\u043b\u044c\u0437\u043e\u043c \u0425\u043e\u0430\u0440\u043e\u043c \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u0435\u0433\u043e \u0440\u0430\u0431\u043e\u0442\u044b \u0432 \u041c\u0413\u0423 \u0432 1960\u00a0\u0433\u043e\u0434\u0443.</p>", "wiki_url": "https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0"}}, "IntroSort": {"wiki": {"type": "standard", "title": "Introsort", "namespace": {"id": 0, "text": ""}, "titles": {"canonical": "Introsort", "normalized": "Introsort", "display": "Introsort"}, "revision": "92612109", "tid": "bdf217df-5932-11e8-9aa6-d006fdfbc110", "content_urls": {"desktop": {"page": "https://ru.wikipedia.org/wiki/Introsort", "revisions": "https://ru.wikipedia.org/wiki/Introsort?action=history", "edit": "https://ru.wikipedia.org/wiki/Introsort?action=edit", "talk": "https://ru.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:Introsort"}, "mobile": {"page": "https://ru.m.wikipedia.org/wiki/Introsort", "revisions": "https://ru.m.wikipedia.org/wiki/Special:History/Introsort", "edit": "https://ru.m.wikipedia.org/wiki/Introsort?action=edit", "talk": "https://ru.m.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:Introsort"}}, "api_urls": {"summary": "https://ru.wikipedia.org/api/rest_v1/page/summary/Introsort", "metadata": "https://ru.wikipedia.org/api/rest_v1/page/metadata/Introsort", "references": "https://ru.wikipedia.org/api/rest_v1/page/references/Introsort", "media": "https://ru.wikipedia.org/api/rest_v1/page/media/Introsort", "edit_html": "https://ru.wikipedia.org/api/rest_v1/page/html/Introsort", "talk_page_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:Introsort"}, "extract": "Introsort \u0438\u043b\u0438 \u0438\u043d\u0442\u0440\u043e\u0441\u043f\u0435\u043a\u0442\u0438\u0432\u043d\u0430\u044f \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430\u00a0\u2014 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438, \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0439 \u0414\u044d\u0432\u0438\u0434\u043e\u043c \u041c\u044e\u0441\u0441\u0435\u0440\u043e\u043c \u0432 1997 \u0433\u043e\u0434\u0443. \u041e\u043d \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u0431\u044b\u0441\u0442\u0440\u0443\u044e \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443 \u0438 \u043f\u0435\u0440\u0435\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u043f\u0438\u0440\u0430\u043c\u0438\u0434\u0430\u043b\u044c\u043d\u0443\u044e \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443, \u043a\u043e\u0433\u0434\u0430 \u0433\u043b\u0443\u0431\u0438\u043d\u0430 \u0440\u0435\u043a\u0443\u0440\u0441\u0438\u0438 \u043f\u0440\u0435\u0432\u044b\u0441\u0438\u0442 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0437\u0430\u0440\u0430\u043d\u0435\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0443\u0440\u043e\u0432\u0435\u043d\u044c. \u042d\u0442\u043e\u0442 \u043f\u043e\u0434\u0445\u043e\u0434 \u0441\u043e\u0447\u0435\u0442\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u0435 \u0434\u043e\u0441\u0442\u043e\u0438\u043d\u0441\u0442\u0432\u0430 \u043e\u0431\u043e\u0438\u0445 \u043c\u0435\u0442\u043e\u0434\u043e\u0432 \u0441 \u0445\u0443\u0434\u0448\u0438\u043c \u0441\u043b\u0443\u0447\u0430\u0435\u043c O(n log n) \u0438 \u0431\u044b\u0441\u0442\u0440\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435\u043c, \u0441\u0440\u0430\u0432\u043d\u0438\u043c\u044b\u043c \u0441 \u0431\u044b\u0441\u0442\u0440\u043e\u0439 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u043e\u0439. \u0422\u0430\u043a \u043a\u0430\u043a \u043e\u0431\u0430 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f, \u044d\u0442\u043e\u0442 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0442\u0430\u043a\u0436\u0435 \u043f\u0440\u0438\u043d\u0430\u0434\u043b\u0435\u0436\u0438\u0442 \u043a\u043b\u0430\u0441\u0441\u0443 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043e\u043a \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0439.", "extract_html": "<p><b>Introsort</b> \u0438\u043b\u0438 <b>\u0438\u043d\u0442\u0440\u043e\u0441\u043f\u0435\u043a\u0442\u0438\u0432\u043d\u0430\u044f \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430</b>\u00a0\u2014 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438, \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0439 \u0414\u044d\u0432\u0438\u0434\u043e\u043c \u041c\u044e\u0441\u0441\u0435\u0440\u043e\u043c \u0432 1997 \u0433\u043e\u0434\u0443. \u041e\u043d \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u0431\u044b\u0441\u0442\u0440\u0443\u044e \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443 \u0438 \u043f\u0435\u0440\u0435\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u043f\u0438\u0440\u0430\u043c\u0438\u0434\u0430\u043b\u044c\u043d\u0443\u044e \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443, \u043a\u043e\u0433\u0434\u0430 \u0433\u043b\u0443\u0431\u0438\u043d\u0430 \u0440\u0435\u043a\u0443\u0440\u0441\u0438\u0438 \u043f\u0440\u0435\u0432\u044b\u0441\u0438\u0442 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0437\u0430\u0440\u0430\u043d\u0435\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u0439 \u0443\u0440\u043e\u0432\u0435\u043d\u044c. \u042d\u0442\u043e\u0442 \u043f\u043e\u0434\u0445\u043e\u0434 \u0441\u043e\u0447\u0435\u0442\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u0435 \u0434\u043e\u0441\u0442\u043e\u0438\u043d\u0441\u0442\u0432\u0430 \u043e\u0431\u043e\u0438\u0445 \u043c\u0435\u0442\u043e\u0434\u043e\u0432 \u0441 \u0445\u0443\u0434\u0448\u0438\u043c \u0441\u043b\u0443\u0447\u0430\u0435\u043c O(<i>n</i> log <i>n</i>) \u0438 \u0431\u044b\u0441\u0442\u0440\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435\u043c, \u0441\u0440\u0430\u0432\u043d\u0438\u043c\u044b\u043c \u0441 \u0431\u044b\u0441\u0442\u0440\u043e\u0439 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u043e\u0439. \u0422\u0430\u043a \u043a\u0430\u043a \u043e\u0431\u0430 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f, \u044d\u0442\u043e\u0442 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0442\u0430\u043a\u0436\u0435 \u043f\u0440\u0438\u043d\u0430\u0434\u043b\u0435\u0436\u0438\u0442 \u043a\u043b\u0430\u0441\u0441\u0443 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043e\u043a \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0439.</p>", "wiki_url": "https://ru.wikipedia.org/wiki/Introsort"}}};
+</script>
+
+      
+      <div class="navigation">
+          <a href="lec_1_04.html">← взад</a>
+          <a href="index.html">на главную</a>
+          <a href="lec_1_06.html">вперёд →</a>
+      </div>
+      
+
+      
+  </article>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/popup.js"></script>
+</body>
+</html>

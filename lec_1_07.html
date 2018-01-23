@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Заголовок</title>
+<!-- Search Engine -->
+<meta name="description" content="Рассмотрим задачу о самой длинной возрастающей подпоследовательности. Пусть есть целочисленный массив, например  . Естественный подход — перебор (перебрать">
+<meta name="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Заголовок">
+<meta itemprop="description" content="Рассмотрим задачу о самой длинной возрастающей подпоследовательности. Пусть есть целочисленный массив, например  . Естественный подход — перебор (перебрать">
+<meta itemprop="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Заголовок">
+<meta name="twitter:description" content="Рассмотрим задачу о самой длинной возрастающей подпоследовательности. Пусть есть целочисленный массив, например  . Естественный подход — перебор (перебрать">
+<meta name="twitter:image:src" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter - Article -->
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Заголовок">
+<meta property="og:description" content="Рассмотрим задачу о самой длинной возрастающей подпоследовательности. Пусть есть целочисленный массив, например  . Естественный подход — перебор (перебрать">
+<meta property="og:image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<meta property="og:type" content="article">
+<!-- Open Graph - Article -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://demiurg906.github.io/au-algorithms-sem_1/assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js" integrity="sha256-MRn7pN9LOBMrkp+8F2t5xb/92V1irzXp/dl5tUTwEgE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/xpath.js" type="text/javascript"></script>
+<script>newIssue="https://github.com/demiurg906/au-algorithms-sem_1/issues/new"</script>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/load.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax:    {
+    inlineMath:  [['$','$'],  ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    displayAlign: "center"
+    // processEscapes: true
+  },
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+  <div id="mistake">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.938 402.938"><path d="M401.785 33.437C399.28 18.683 389.61 16.48 384.07 16.48c-22.935 0-65.053 36.684-109.644 75.52-18.23 15.88-37.083 32.3-53.502 45.048-5.858 4.548-11.803 9.103-18.097 13.924-31.276 23.96-66.726 51.12-94.16 80.356-26.887 28.65-42.593 55.62-47.676 81.98L4.12 364.683c-5.122 4.628-5.523 12.532-.896 17.655 2.468 2.732 5.867 4.12 9.28 4.12 2.987 0 5.984-1.063 8.375-3.223l47.816-43.194c2.31.634 5.016.963 8.19.963 27.39 0 93.534-24.866 153.857-57.84l6.043-3.305L226.11 269.8l17.888 5.932 1.947-1.13c15.867-9.21 30.165-18.41 42.496-27.338 2.19-1.586 4.45-3.292 7.115-5.372l3.87-3.02-11.223-14.93 20.26 7.21 2.218-2.02c15.51-14.13 29.805-30.467 42.486-48.554l2.428-3.462-18.606-18.342 25.257 8.17 2.054-3.37c28.307-46.454 43.02-97.535 37.485-130.137z"/></svg>
+  </div>
+
+  <article class="content">
+      
+
+      
+      <div class="navigation">
+        <a href="lec_1_06.html">← взад</a>
+        <a href="index.html">к оглавлению</a>
+        <a href="lec_1_08.html">вперёд →</a>
+      </div>
+      
+      <h1 id="Динамическое-программирование"><a aria-hidden="true" href="#Динамическое-программирование"><span class="icon icon-link"></span></a>Динамическое программирование</h1>
+<p>Рассмотрим задачу о самой длинной возрастающей подпоследовательности. Пусть есть целочисленный массив, например <code>[3, 5, 8, 1, 2, 7, 9, 3, 2, 8]</code>. Естественный подход — перебор (перебрать все возможные подмножества, проверить является ли возрастающей и из них выбрать). Можно немного оптимизировать, и сразу отсекать те случаи, когда например, второй элемент оказался меньше чем первый, и значит перебирать уже ничего не нужно.</p>
+<p>Давайте посмотрим на какую-нибудь получившеюся подпоследовательность: <code>[1, 2, 4, 8]</code> — в ней все элементы меньше чем 8, и оставшиеся элементы — тоже возрастающая подпоследовательность. То есть можно выбрать первый элемент, и дальше решать подзадачу на оставшемся отрезке исходного массива.</p>
+<p><span class="inlineMath">$L[k]$</span> — длина самой длинной возрастающей подпоследовательности, которая заканчиваются в элементе с номером <span class="inlineMath">$k$</span>. То есть <span class="inlineMath">$L[\,k\,] = \max_{i &#x3C; k, M[i] &#x3C; M[k]}{ \{ L[\,i\,] \} }  + 1$</span>.</p>
+<p>Идея решения:</p>
+<ol>
+<li>Выделить подзадачи</li>
+<li>Записать соотношение</li>
+<li>Будем вычислять все подзадачи и сохранять значения-ответы (в массив, например)</li>
+<li>Определить порядок вычисления на подзадачах. В нашем случае порядок нужно выбрать таким, чтобы к тому моменту как мы захотели вычислить <span class="inlineMath">$L[k]$</span> нужно, чтобы все элементы <span class="inlineMath">$L[i], i=1..k$</span> были вычислены.</li>
+</ol>
+<p>В нешем случае заполним <span class="inlineMath">$L[1] = 1$</span> — самая большая последовательность, которая заканчивается в первом элементе равна одному. Теперь в цикле:</p>
+<pre><code class="language-python">for k = 2 to n:
+  L[k] = 1
+  for i = 1 to k - 1:
+    if (L[i] + 1 > L[k]) and (M[i] &#x3C; M[k]):
+      L[k] = L[i] + 1
+
+return L[k]  # k — max
+</code></pre>
+<p>Очевидно, сложность равна <span class="inlineMath">$O(n^2)$</span>. Теперь нам нужно восстановить элементы последовательности. Будем при выборе максимума в <span class="inlineMath">$L[k]$</span> будем запоминать, откуда он пришёл (из какого <span class="inlineMath">$i$</span>). Заведём массив <span class="inlineMath">$P[1:n] = \{ 0 \}$</span>.</p>
+<pre><code class="language-python">  if (L[i] + 1 > L[k]) and (M[i] &#x3C; M[k]):
+    L[k] = L[i] + 1
+    P[k] = i
+</code></pre>
+<p>Раскручивая обратно массив <span class="inlineMath">$P$</span>, мы сможем найти подпоследовательность. <span class="inlineMath">$O(n^2)$</span> времени, <span class="inlineMath">$O(n)$</span> памяти. Решить задачу можно и за <span class="inlineMath">$O(n \log n)$</span> (заюзать бинарный поиск, чтобы заменить внутренний цикл).</p>
+<h2 id="Связь-с-кратчайшими-путями"><a aria-hidden="true" href="#Связь-с-кратчайшими-путями"><span class="icon icon-link"></span></a>Связь с кратчайшими путями</h2>
+<p>Есть <a class="term">ациклический граф</a>, вершины которого отсортированы в топологическом порядоке (все рёбра идут слева направо):</p>
+<img src="lecture_pic1.svg" alt="граф" align="center"/>
+<p>Нужно найти кратчайший путь от <span class="inlineMath">$s$</span> до <span class="inlineMath">$t$</span>. (Или длиннейшнего пути, эти задачи эквивалентны в случае ацикличного графа.)</p>
+<p>Можно заметить, что задача похожа с предыдущей, в ней тоже можно нарисовать граф зависимостей.</p>
+<ol>
+<li><span class="inlineMath">$D[v]$</span> — расстояние от <span class="inlineMath">$s$</span> до <span class="inlineMath">$v$</span></li>
+<li><span class="inlineMath">$D[v] = \min_{u \rightarrow v}{ \{ D[u] + w(u, v) \} }$</span></li>
+<li>В порядке топологической сортировке (в том в котором рёбра идут слева направо, что одно и то же).</li>
+</ol>
+<h2 id="Задача-о-рюкзаке"><a aria-hidden="true" href="#Задача-о-рюкзаке"><span class="icon icon-link"></span></a>Задача о рюкзаке</h2>
+<p>Нас будет интересовать "непрерывная задача о рюкзаке". Есть вор, у него рюкзак вместительностью 100 литров. Ему нужно максимизировать стоимость товаров в рюкзаке.</p>
+<p>"Жадный алгоритм": наполняем рюкзак в порядке убывания удельной стоимости. Задача детская и очень простая. Но вот в дискретном случае всё становится очень грустно.</p>
+<h3 id="Дискретная-задача-о-рюкзаке-с-повторениями"><a aria-hidden="true" href="#Дискретная-задача-о-рюкзаке-с-повторениями"><span class="icon icon-link"></span></a>Дискретная задача о рюкзаке с повторениями</h3>
+<p>Человек попал на какой-то большой склад, у него есть рюкзак вместительностью <span class="inlineMath">$W$</span> килограмм. И есть <span class="inlineMath">$n$</span> штук товаров, которые характеризуются следующими параметрами:</p>
+<ul>
+<li><span class="inlineMath">$w_i$</span> — вес</li>
+<li><span class="inlineMath">$v_i$</span> — стоимость</li>
+</ul>
+<p>Например, <span class="inlineMath">$w$</span> = 10. Жадный: 12, оптимальный: 16.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><span class="inlineMath">${w}$</span></td>
+<td align="center">6</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center"><span class="inlineMath">${v}$</span></td>
+<td align="center">12</td>
+<td align="center">8</td>
+</tr>
+</tbody>
+</table>
+<p>Решаем:
+1. <span class="inlineMath">$V[k]$</span> — максимальная стоимость рюкзака из <span class="inlineMath">$k$</span> килограммов.
+2. <span class="inlineMath">$V[k] = \max_{\, i\ :\ w_i \leqslant k}{ \{ v_i + V[k - w_i] \} }$</span> — стоимость товара + максимальная стоимость рюкзака без этого товара
+3. Порядок естественный</p>
+<pre><code class="language-python">V[1 : W] = { 0 }
+
+for k = 1 to W:
+  for i = 1 to n:
+    if (w_i &#x3C;= k) and (v_i + V[k - w_i] > V[k])
+      V[k] = v_i + V[k - w_i]
+</code></pre>
+<p>Время работы <span class="inlineMath">$O(n \cdot w)$</span>. Такая сложность называется квазиполимиальной. <span class="inlineMath">$w$</span> — вместимость рюкзака, она задана во входе программы, числом (бинарным). Длина входа <span class="inlineMath">$\approx |W| + \sum_{i=1}^{n}{\left( |v_i| + |w_i| \right)}$</span>, но <span class="inlineMath">$W \approx 2^n$</span>, правая часть <span class="inlineMath">$O(n)$</span>, суммарная сложность <span class="inlineMath">$O(n\cdot 2^n)$</span>. Алгоритм, короче, не является полиномиальным от длины входа (вход может быть очень большим, например, где <span class="inlineMath">$|W| \approx 2^{50}$</span>, и мы задачу быстро не решим).</p>
+<h3 id="Без-повторений"><a aria-hidden="true" href="#Без-повторений"><span class="icon icon-link"></span></a>Без повторений</h3>
+<p>Вор забрался в эрмитаж. Все вещи уникальны. То есть надо запоминать, что у нас есть вещи, которые мы уже положили. Попытаемся ввести подзадачу.</p>
+<ol>
+<li>
+<p><span class="inlineMath">$V[k, m]$</span> — максимальная стоимость рюкзака вместительностью <span class="inlineMath">$k$</span>, который заполнен предметами от <span class="inlineMath">$1\,..\,m$</span>. (Пронумеровали предметы, и запрещаем класть предметы после <span class="inlineMath">$m$</span>-го).</p>
+</li>
+<li>
+<p><span class="inlineMath">$V[k, m]$</span> — предмет с номером <span class="inlineMath">$m$</span> мы либо положим, либо не положим. То есть возможны две ситуации. Если положим, то переходим к подзадачам, где <span class="inlineMath">$k$</span> уменьшилось на <span class="inlineMath">$w_m$</span> + стоимость <span class="inlineMath">$v_m$</span>. Второй, если мы не положили: вместимость рюкзака не изменилось, но предмет с номером <span class="inlineMath">$m$</span> мы не берём: <span class="inlineMath">$\max{\{ V[k - w_m, m - 1] + v_m, V[k, m-1]\}}$</span></p>
+</li>
+<li>
+<p>Заполнять нужно столбец за столбцом или строка за строкой (см. рисунок ниже).</p>
+</li>
+</ol>
+<p>Сложность нашего алгоритма получилась <span class="inlineMath">$O(n \cdot W)$</span> (нужно заполнить матрицу размера <span class="inlineMath">$n \cdot W$</span>), памяти столько же. Если внимательно посмотреть, то можно заметить, что если заполнять по столбцам, то хранить можно только предыдущий столбец <i>(или два?)</i>, т.е. хранить можно <span class="inlineMath">$O(W)$</span>. Можно хранить даже один столбец (верхнюю левую часть столбца, и нижнюю правую куда указывает стрелка), если перезаписывать снизу вверх. Но мы не можем восстановить исходную последовательность, переходя в соседний стобец (задача не сводится к первой).</p>
+<h2 id="Задача-о-перемножении-матриц"><a aria-hidden="true" href="#Задача-о-перемножении-матриц"><span class="icon icon-link"></span></a>Задача о перемножении матриц</h2>
+<p>Предположим, нужно перемножить несколько матриц: <span class="inlineMath">$A \times B \times C \times D$</span>. Если взять две матрицы: <span class="inlineMath">$(n_\text{rows}, m_\text{cols}) \times (m_\text{rows}, k_\text{cols}) \rightarrow (n_\text{rows}, k_\text{cols})$</span>. Потребуетcя <span class="inlineMath">$n \times m \times k$</span> операций.</p>
+<p>Пусть: A — 10 x 20, B — 20 x 40, C — 40 x 100.</p>
+<ul>
+<li><span class="inlineMath">$(AB)C = 10 \cdot 20 \cdot 40\ \ + 10 \cdot 40 \cdot 100 = 48000$</span></li>
+<li><span class="inlineMath">$A(BC) = 20 \cdot 40 \cdot 100 + 10 \cdot 20 \cdot 100 = 100'000$</span></li>
+</ul>
+<p>То есть за счёт правильной расстановки скобок мы могли бы сэкономить. Задача: каково минимальное количество перемножений чисел?.</p>
+<p>Вход: <span class="inlineMath">$m_0, m_1, m_2, \ldots, m_n$</span>, то есть матрица <span class="inlineMath">$A_i$</span> имеет размерность <span class="inlineMath">$m_{i-1} \times m_i$</span>.</p>
+<ol>
+<li><span class="inlineMath">$C[i, j]$</span> — минимальное количество операций для <span class="inlineMath">$A_i \times \ldots \times A_j$</span> — для произведения на подотрезке.</li>
+<li>Будем разбивать отрезок на две части: <span class="inlineMath">$C[i, j] = \min_{i \leqslant k \leqslant j - 1}{C[i, k] + C[k + 1, j]} + m_{i-1} * m_k * m_j$</span></li>
+<li>Порядок опишем кодом:</li>
+</ol>
+<pre><code class="language-python">for s = 1 to n      # s — длина отрезка
+  for i = 1 to n - s:
+    C[i, i+s] = min (C[i, k] + C[k+1, i+s])  # по i ≤ k ≤ i+s-1
+              + m_{i-1} * m_k * m_{i+s}
+</code></pre>
+<p>То есть сначала заполняем диагональ, после этого заполняем над-диагональ и под-диагональ, это соответствует отрезком длины два. После заполняем дальше.</p>
+<script>
+var terms = {"\u0430\u0446\u0438\u043a\u043b\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0433\u0440\u0430\u0444": {"wiki": {"type": "standard", "title": "\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439 \u0442\u0435\u043e\u0440\u0438\u0438 \u0433\u0440\u0430\u0444\u043e\u0432", "namespace": {"id": 0, "text": ""}, "titles": {"canonical": "\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "normalized": "\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439 \u0442\u0435\u043e\u0440\u0438\u0438 \u0433\u0440\u0430\u0444\u043e\u0432", "display": "\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439 \u0442\u0435\u043e\u0440\u0438\u0438 \u0433\u0440\u0430\u0444\u043e\u0432"}, "revision": "92317136", "tid": "6a1ddbaf-48d1-11e8-b031-dc1b121d4f36", "description": "\u0441\u0442\u0430\u0442\u044c\u044f-\u0441\u043f\u0438\u0441\u043e\u043a \u0432 \u043f\u0440\u043e\u0435\u043a\u0442\u0435 \u0412\u0438\u043a\u0438\u043c\u0435\u0434\u0438\u0430", "content_urls": {"desktop": {"page": "https://ru.wikipedia.org/wiki/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "revisions": "https://ru.wikipedia.org/wiki/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432?action=history", "edit": "https://ru.wikipedia.org/wiki/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432?action=edit", "talk": "https://ru.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432"}, "mobile": {"page": "https://ru.m.wikipedia.org/wiki/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "revisions": "https://ru.m.wikipedia.org/wiki/Special:History/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "edit": "https://ru.m.wikipedia.org/wiki/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432?action=edit", "talk": "https://ru.m.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432"}}, "api_urls": {"summary": "https://ru.wikipedia.org/api/rest_v1/page/summary/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "metadata": "https://ru.wikipedia.org/api/rest_v1/page/metadata/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "references": "https://ru.wikipedia.org/api/rest_v1/page/references/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "media": "https://ru.wikipedia.org/api/rest_v1/page/media/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "edit_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432", "talk_page_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0413\u043b\u043e\u0441\u0441\u0430\u0440\u0438\u0439_\u0442\u0435\u043e\u0440\u0438\u0438_\u0433\u0440\u0430\u0444\u043e\u0432"}, "extract": "\u0417\u0434\u0435\u0441\u044c \u0441\u043e\u0431\u0440\u0430\u043d\u044b \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u044f \u0442\u0435\u0440\u043c\u0438\u043d\u043e\u0432 \u0438\u0437 \u0442\u0435\u043e\u0440\u0438\u0438 \u0433\u0440\u0430\u0444\u043e\u0432. \u041a\u0443\u0440\u0441\u0438\u0432\u043e\u043c \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u044b \u0441\u0441\u044b\u043b\u043a\u0438 \u043d\u0430 \u0442\u0435\u0440\u043c\u0438\u043d\u044b \u0432 \u044d\u0442\u043e\u043c \u0441\u043b\u043e\u0432\u0430\u0440\u0435.\n", "extract_html": "<p>\u0417\u0434\u0435\u0441\u044c \u0441\u043e\u0431\u0440\u0430\u043d\u044b \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u044f \u0442\u0435\u0440\u043c\u0438\u043d\u043e\u0432 \u0438\u0437 \u0442\u0435\u043e\u0440\u0438\u0438 \u0433\u0440\u0430\u0444\u043e\u0432. \u041a\u0443\u0440\u0441\u0438\u0432\u043e\u043c \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u044b <i>\u0441\u0441\u044b\u043b\u043a\u0438</i> \u043d\u0430 \u0442\u0435\u0440\u043c\u0438\u043d\u044b \u0432 \u044d\u0442\u043e\u043c \u0441\u043b\u043e\u0432\u0430\u0440\u0435.</p>\n", "wiki_url": "https://ru.wikipedia.org/wiki/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9_%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D0%B8_%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%B2"}}};
+</script>
+
+      
+      <div class="navigation">
+          <a href="lec_1_06.html">← взад</a>
+          <a href="index.html">на главную</a>
+          <a href="lec_1_08.html">вперёд →</a>
+      </div>
+      
+
+      
+  </article>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/popup.js"></script>
+</body>
+</html>

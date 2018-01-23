@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Заголовок</title>
+<!-- Search Engine -->
+<meta name="description" content="Максимальное независимое множество на деревьях (Independent Set) Независимое множество: G = (V, E) 
+">
+<meta name="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Заголовок">
+<meta itemprop="description" content="Максимальное независимое множество на деревьях (Independent Set) Независимое множество: G = (V, E) 
+">
+<meta itemprop="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Заголовок">
+<meta name="twitter:description" content="Максимальное независимое множество на деревьях (Independent Set) Независимое множество: G = (V, E) 
+">
+<meta name="twitter:image:src" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter - Article -->
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Заголовок">
+<meta property="og:description" content="Максимальное независимое множество на деревьях (Independent Set) Независимое множество: G = (V, E) 
+">
+<meta property="og:image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<meta property="og:type" content="article">
+<!-- Open Graph - Article -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://demiurg906.github.io/au-algorithms-sem_1/assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js" integrity="sha256-MRn7pN9LOBMrkp+8F2t5xb/92V1irzXp/dl5tUTwEgE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/xpath.js" type="text/javascript"></script>
+<script>newIssue="https://github.com/demiurg906/au-algorithms-sem_1/issues/new"</script>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/load.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax:    {
+    inlineMath:  [['$','$'],  ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    displayAlign: "center"
+    // processEscapes: true
+  },
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+  <div id="mistake">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.938 402.938"><path d="M401.785 33.437C399.28 18.683 389.61 16.48 384.07 16.48c-22.935 0-65.053 36.684-109.644 75.52-18.23 15.88-37.083 32.3-53.502 45.048-5.858 4.548-11.803 9.103-18.097 13.924-31.276 23.96-66.726 51.12-94.16 80.356-26.887 28.65-42.593 55.62-47.676 81.98L4.12 364.683c-5.122 4.628-5.523 12.532-.896 17.655 2.468 2.732 5.867 4.12 9.28 4.12 2.987 0 5.984-1.063 8.375-3.223l47.816-43.194c2.31.634 5.016.963 8.19.963 27.39 0 93.534-24.866 153.857-57.84l6.043-3.305L226.11 269.8l17.888 5.932 1.947-1.13c15.867-9.21 30.165-18.41 42.496-27.338 2.19-1.586 4.45-3.292 7.115-5.372l3.87-3.02-11.223-14.93 20.26 7.21 2.218-2.02c15.51-14.13 29.805-30.467 42.486-48.554l2.428-3.462-18.606-18.342 25.257 8.17 2.054-3.37c28.307-46.454 43.02-97.535 37.485-130.137z"/></svg>
+  </div>
+
+  <article class="content">
+      
+
+      
+      <div class="navigation">
+        <a href="lec_1_07.html">← взад</a>
+        <a href="index.html">к оглавлению</a>
+        <a href="lec_1_09.html">вперёд →</a>
+      </div>
+      
+      <h2 id="Максимальное-независимое-множество-на-деревьях-independent-set"><a aria-hidden="true" href="#Максимальное-независимое-множество-на-деревьях-independent-set"><span class="icon icon-link"></span></a>Максимальное независимое множество на деревьях (Independent Set)</h2>
+<p>Независимое множество:
+<span class="inlineMath">$G = (V, E)$</span>
+<span class="inlineMath">$IS \subseteq V : \ !\exists u, v \in IS: \ (u,v) \in E$</span> -- не существует вершин, соединенных ребром.</p>
+<pre><code class="language-python">IS[v]      # размер max IS в поддереве с корнем v
+IS[l] = 1  # l -- лист
+IS[v] = max(sum(IS[w]) + 1, sum(IS[u]))  # берем или не берем текущую вершину
+# u -- ребенок, w -- внук
+</code></pre>
+<p>Ассимптотика <span class="inlineMath">$O(n)$</span>, т.к. каждая вершина 1 раз поучаствует как корень, 1 раз как сын и 1 раз как внук.</p>
+<h2 id="Редакционное-расстояние-расстояние-Левинштейна-editdistance"><a aria-hidden="true" href="#Редакционное-расстояние-расстояние-Левинштейна-editdistance"><span class="icon icon-link"></span></a>Редакционное расстояние (расстояние Левинштейна, EditDistance)</h2>
+<p>Вход: две строки <code>s1</code> и <code>s2</code>
+Выход: минимальное количество правок, которые переделывают <code>s1</code> в <code>s2</code>
+Правки:</p>
+<ul>
+<li>Добавить букву</li>
+<li>Удалить букву</li>
+<li>Заменить букву</li>
+</ul>
+<p>Бывает еще "взвешенная" версия, в которой у каждой операции есть стоимость.</p>
+<h3 id="Задача-о-выравнивании-alligment"><a aria-hidden="true" href="#Задача-о-выравнивании-alligment"><span class="icon icon-link"></span></a>Задача о выравнивании (Alligment)</h3>
+<p>Вход: две строки <code>s1</code> и <code>s2</code>
+Задача: записать <code>s2</code> под <code>s1</code> так, чтобы максимальное число символов совпало (количество различий было минимально).</p>
+<p>Пример:
+<code>дождь</code> <span class="inlineMath">$\rightarrow$</span> <code>д-ождь</code>
+<code>дрожь</code> <span class="inlineMath">$\rightarrow$</span> <code>дро-жь</code></p>
+<p><strong>Утверждение:</strong> задача о выравнивании для <code>s1</code> и <code>s2</code> имеет то же решение, что и <code>edit_distance(s1, s2)</code></p>
+<p><strong>Решение:</strong></p>
+<pre><code class="language-python">e[i, j] = edit_distance(s1[:i+1], s2[:j+1])
+e[i, -1] = i  # по хорошему надо в основном алгоритме сдвинуть
+e[-1, j] = j  # индексы, чтобы s[0] давало пустую строку
+e[i, j] = min(e[i, j-1] + 1  # + c_add
+              e[i-1, j] + 1  # + c_remove
+              e[i-1, j-1] + (1 if s1[i-1] != s2[j-1] else 0)  # c_replace
+          )
+</code></pre>
+<p>Если задача "взвешенная", то единицы заменятся на соответствующие стоимости.</p>
+<p>Восстанавливать ответ можно передвигаясь в минимальную ячейку из трех соседей, операция понятна из положения той клетки, куда переходим (диагональ -- замена, горизонталь -- добавление, вертикаль -- удаление).</p>
+<p><strong>Замечание:</strong> можно решить за <span class="inlineMath">$O(|s_1| + |s_2|)$</span> памяти, если хранить только два столбца. На самом деле за <span class="inlineMath">$O(\min(|s_1|, |s_2|))$</span>. Время все равно <span class="inlineMath">$O(|s_1|\cdot|s_2|)$</span>. При экономии памяти нет возможности восстановить ответ.</p>
+<h3 id="Алгоритм-Хиршберга"><a aria-hidden="true" href="#Алгоритм-Хиршберга"><span class="icon icon-link"></span></a>Алгоритм Хиршберга</h3>
+<p><span class="inlineMath">$O(\min(|s_1|, |s_2|))$</span> + восстановление ответа.</p>
+<p><strong>Лемма:</strong> <code>edit_distance(s1, s2) = edit_distance(rev(s1), rev(s2))</code>, где <code>rev(s) = reversed(s)</code></p>
+<p><strong>Лемма:</strong> пусть <code>s2 = s2_1 + s2_2</code> -- разбиение <code>s2</code> на две строки.
+1. <span class="inlineMath">$\exists i:$</span> <code>ed(s1, s2) = ed(s1[:i], s2_1) + ed(s1[i:], s2_2)</code>.
+2. <span class="inlineMath">$\forall i:$</span> <code>ed(s1, s2) &#x3C;= ed(s1[:i], s2_1) + ed(s1[i:], s2_2)</code>
+<i>Поддиапазоны не пересекаются (здесь используется синтаксис питона, <code>s1[:i]</code> означает диапазон</i> <span class="inlineMath">$[0; i)$</span>.
+<strong>Доказательство:</strong>
+1. Рассмотрим выравнивание <code>s1</code> и <code>s2</code>. Если где-нибудь это выравнивание по <code>s2</code>, то в том же месте можно распилить <code>s1</code>, и все будет хорошо.
+2. Рассмотрим <code>s1</code> и <code>s2</code>. Пусть для какого-то <code>j</code>, по которому разбиваем <code>s2</code> существует какой-то <code>i</code>, для которого <code>ed(s1, s2) > ed(s1[:i], s2[:j]) + ed(s1[i:], s2[j:])</code>. Тогда на основе этих <code>i</code> и <code>j</code> можем получить более короткое выравнивание, чем то оптимальное, что мы уже получили. Противоречие.</p>
+<p><strong>Следствие:</strong>
+<code>s2 = s2_1 + s2_2</code> <span class="inlineMath">$\Rightarrow \exists i:$</span> <code>ed(s1, s2) = ed(s1[1:i], s2_1) + ed(s1[n:i+1], rev(s2_2))</code></p>
+<p><strong>Алгоритм:</strong>
+1. Распилим <code>s2</code> пополам: <code>s2 = s2_1 + s2_2</code>.
+2. Решаем задачу для <code>s1</code> и <code>s2_1</code>
+3. Решаем задачу для <code>rev(s1)</code> и <code>rev(s2_2)</code> (решаем старым способом за <span class="inlineMath">$O(|s1|)$</span> памяти)
+4. Смотрим на крайние столбцы для двух решений (соседние столбцы в исходной таблице).
+Находим <code>min(sum(соотв. ячеек))</code> (соответствующие ячейки -- диагональные в этих двух столцах) <span class="inlineMath">$\Rightarrow$</span> получаем <span class="inlineMath">$i$</span> из леммы 2
+5. Запускаем рекурсивно для (<code>s1[:i]</code> и <code>s2_1</code>) и (<code>s1[i:]</code> и <code>s2_2</code>)</p>
+<p>Ответ можно восстановить по парам индексов <code>i</code> и <code>j</code>, запомненных на шаге 4.</p>
+<p><strong>Анализ:</strong>
+<span class="inlineMath">$T(n) = |s1|\cdot|s2| + \frac{|s1|\cdot|s2|}2 + \frac{|s1|\cdot|s2|}4 = O(|s1|\cdot|s2|)$</span></p>
+<p>Такой подход называется <i>Meet in the middle</i>.</p>
+<script>
+var terms = {};
+</script>
+
+      
+      <div class="navigation">
+          <a href="lec_1_07.html">← взад</a>
+          <a href="index.html">на главную</a>
+          <a href="lec_1_09.html">вперёд →</a>
+      </div>
+      
+
+      
+  </article>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/popup.js"></script>
+</body>
+</html>

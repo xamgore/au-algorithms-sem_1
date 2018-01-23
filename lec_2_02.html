@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Заголовок</title>
+<!-- Search Engine -->
+<meta name="description" content="RMQ (Range Minimum Query) Задача:  есть массив  A , требуется уметь отвечать на запросы   --  \min  на отрезке  A[i;j] . Динамическая постановка, Дерево от">
+<meta name="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Заголовок">
+<meta itemprop="description" content="RMQ (Range Minimum Query) Задача:  есть массив  A , требуется уметь отвечать на запросы   --  \min  на отрезке  A[i;j] . Динамическая постановка, Дерево от">
+<meta itemprop="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Заголовок">
+<meta name="twitter:description" content="RMQ (Range Minimum Query) Задача:  есть массив  A , требуется уметь отвечать на запросы   --  \min  на отрезке  A[i;j] . Динамическая постановка, Дерево от">
+<meta name="twitter:image:src" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter - Article -->
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Заголовок">
+<meta property="og:description" content="RMQ (Range Minimum Query) Задача:  есть массив  A , требуется уметь отвечать на запросы   --  \min  на отрезке  A[i;j] . Динамическая постановка, Дерево от">
+<meta property="og:image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<meta property="og:type" content="article">
+<!-- Open Graph - Article -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://demiurg906.github.io/au-algorithms-sem_1/assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js" integrity="sha256-MRn7pN9LOBMrkp+8F2t5xb/92V1irzXp/dl5tUTwEgE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/xpath.js" type="text/javascript"></script>
+<script>newIssue="https://github.com/demiurg906/au-algorithms-sem_1/issues/new"</script>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/load.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax:    {
+    inlineMath:  [['$','$'],  ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    displayAlign: "center"
+    // processEscapes: true
+  },
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+  <div id="mistake">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.938 402.938"><path d="M401.785 33.437C399.28 18.683 389.61 16.48 384.07 16.48c-22.935 0-65.053 36.684-109.644 75.52-18.23 15.88-37.083 32.3-53.502 45.048-5.858 4.548-11.803 9.103-18.097 13.924-31.276 23.96-66.726 51.12-94.16 80.356-26.887 28.65-42.593 55.62-47.676 81.98L4.12 364.683c-5.122 4.628-5.523 12.532-.896 17.655 2.468 2.732 5.867 4.12 9.28 4.12 2.987 0 5.984-1.063 8.375-3.223l47.816-43.194c2.31.634 5.016.963 8.19.963 27.39 0 93.534-24.866 153.857-57.84l6.043-3.305L226.11 269.8l17.888 5.932 1.947-1.13c15.867-9.21 30.165-18.41 42.496-27.338 2.19-1.586 4.45-3.292 7.115-5.372l3.87-3.02-11.223-14.93 20.26 7.21 2.218-2.02c15.51-14.13 29.805-30.467 42.486-48.554l2.428-3.462-18.606-18.342 25.257 8.17 2.054-3.37c28.307-46.454 43.02-97.535 37.485-130.137z"/></svg>
+  </div>
+
+  <article class="content">
+      
+
+      
+      <div class="navigation">
+        <a href="lec_2_01.html">← взад</a>
+        <a href="index.html">к оглавлению</a>
+        <a href="lec_2_03.html">вперёд →</a>
+      </div>
+      
+      <h2 id="rmq-range-minimum-query"><a aria-hidden="true" href="#rmq-range-minimum-query"><span class="icon icon-link"></span></a>RMQ (Range Minimum Query)</h2>
+<p><strong>Задача:</strong> есть массив <span class="inlineMath">$A$</span>, требуется уметь отвечать на запросы <code>min(i, j)</code> -- <span class="inlineMath">$\min$</span> на отрезке <span class="inlineMath">$A[i;j]$</span>.</p>
+<h3 id="Динамическая-постановка-Дерево-отрезков"><a aria-hidden="true" href="#Динамическая-постановка-Дерево-отрезков"><span class="icon icon-link"></span></a>Динамическая постановка, Дерево отрезков</h3>
+<p><strong>Запросы:</strong></p>
+<ul>
+<li><code>min(i, j)</code> -- минимум на отрезке</li>
+<li><code>change(i, v)</code> -- поменять значение в <span class="inlineMath">$i$</span>-й ячейке</li>
+</ul>
+<p><a class="term">Дерево отрезков</a> (<a href="http://neerc.ifmo.ru/wiki/index.php?title=%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%BE%D1%82%D1%80%D0%B5%D0%B7%D0%BA%D0%BE%D0%B2._%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5">neerc.ifmo</a>) -- бинарное дерево, в котором каждая вершина соответствует некоторому отрезку. Корень соответствует всему массиву <span class="inlineMath">$[1; n]$</span>, листья -- единичным ячейкам <span class="inlineMath">$[i; i]$</span>.
+Для любой вершины отрезки, соотвествующие детям при объединении дают отрезок, соответствующий самой вершине.</p>
+<p><i>Дерево отрезков</i> хорошее, полное, сбаланированное. Его можно хранить в массиве, как кучу.</p>
+<pre><code class="language-python">class Node:
+    left, right: int  # границы отрезка
+    min_value: value_type  # значение минимума на отрезке
+</code></pre>
+<p>Дерево можно построить за <span class="inlineMath">$O(n)$</span>, идем от листьев, очевидным образом заполняем значения (всего вершины порядка <span class="inlineMath">$2n$</span>).</p>
+<p>Пускай отрезки в вершинах дерева называются <i>каноническими</i>.</p>
+<p><strong>Утверждение:</strong> любой отрезок можно эффективно разбить на <span class="inlineMath">$O(\log n)$</span> <i>канонических</i> отрезков.
+<strong>Доказательство:</strong></p>
+<pre><code class="language-python">def decompose(v, delta):
+    # v -- вершина
+    # delta -- отрезок
+    if v.delta == delta:
+        return [v.delta]
+    if v.delta.size == 0:
+        return []
+    # delta_1 // delta_2 -- пересечение отрезков
+    return decompose(v.left, delta // v.left.delta) +
+        + decompose(v.right, delta // v.right.delta)
+</code></pre>
+<p><strong>Утверждение:</strong> если у <span class="inlineMath">$\Delta$</span> и <span class="inlineMath">$v.\Delta$</span> общий левый конец, то <span class="inlineMath">$Decompose(v, \Delta)$</span> вернет <span class="inlineMath">$O(\log n)$</span> каконических отрезков.
+<strong>Доказательство:</strong> по сути при <span class="inlineMath">$Decompose$</span> будет происходить бинарный поиск правого конца, на пути от корня вниз мы всегда будем идти только по одной ветке.</p>
+<p>Аналогичное утверждение есть про отрезки, у которых совпадают правые концы.</p>
+<p><strong>Утверждение:</strong> в общем случае тоже <span class="inlineMath">$O(\log n)$</span> отрезков.
+<strong>Доказательство:</strong> при запросе ищется вершина, которая делит искомый отрезок на два. Глубина поиска <span class="inlineMath">$O(\log n)$</span>. После этого у нас получается два вызова, у одного совпадает левая граница, у другого -- правая. Итого получается <span class="inlineMath">$O(\log n)$</span> отрезков.</p>
+<p><strong>Утверждение:</strong> отрезки выданные <span class="inlineMath">$Decompose$</span> не пересекаются и в сумме дают исходный отрезок.
+<strong>Следствие:</strong> наши операции (<code>min</code> и <code>change</code>) работают за <span class="inlineMath">$O(\log n)$</span>.</p>
+<p><strong>Крутое утверждение:</strong> вместо <code>min</code> можем реализовать для любой ассоциативной операции.</p>
+<p><strong>Замечания:</strong></p>
+<ul>
+<li>быстрее сделать не получится (иначе можно отсортировать массив быстрее, чем за <span class="inlineMath">$O(\log n)$</span>)</li>
+<li>дерево нужно только в случае, если количество операций не константное <span class="inlineMath">$\left(m\cdot O(n)\geq m\cdot\log n + O(n)\right)$</span></li>
+</ul>
+<h3 id="Статическая-постановка"><a aria-hidden="true" href="#Статическая-постановка"><span class="icon icon-link"></span></a>Статическая постановка</h3>
+<h4 id="Полный-предподсчет"><a aria-hidden="true" href="#Полный-предподсчет"><span class="icon icon-link"></span></a>Полный предподсчет</h4>
+<p>Заводим табличку <span class="inlineMath">$n\times n$</span>, в котором храним минимумы на всех возможных подотрезках.
+Время: <span class="inlineMath">$(O(n^2), O(1))$</span>, память: <span class="inlineMath">$O(n^2)$</span></p>
+<h4 id="Частичные-суммы"><a aria-hidden="true" href="#Частичные-суммы"><span class="icon icon-link"></span></a>Частичные суммы</h4>
+<p>Работает только для операций, у которых есть обратная (например для RSQ (Range Sum Query) -- запрос на сумму вместо минимума), можно вычислить массив <span class="inlineMath">$s[i] = \sum\limits_{j=1}^ia[j]$</span>.
+Время: <span class="inlineMath">$O(n), O(1)$</span>, память: <span class="inlineMath">$O(n)$</span></p>
+<h4 id="sparse-table-разреженная-таблица"><a aria-hidden="true" href="#sparse-table-разреженная-таблица"><span class="icon icon-link"></span></a>Sparse table (разреженная таблица)</h4>
+<p><a href="http://neerc.ifmo.ru/wiki/index.php?title=%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_RMQ_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B">Описание</a> на neerc.ifmo.</p>
+<p>В таблицу запишем <span class="inlineMath">$\min$</span> для всех отрезков длины <span class="inlineMath">$2^k$</span> (<i>стандартными</i> отрезками), таких отрезков порядка <span class="inlineMath">$O(n\log n)$</span>.</p>
+<p><strong>Утверждение:</strong> любой отрезок можно покрыть двумя стандартными отрезками.
+<strong>Доказательство:</strong> пусть есть отрезок длины <span class="inlineMath">$2^k\leq l&#x3C;2^{k+1}$</span>. Есть два отрезка длины <span class="inlineMath">$2^k$</span>, левый и правый концы совпадают с аналогичными концами данного отрезка соответственно.</p>
+<p><strong>Итого</strong>, как искать минимум в отрезке <span class="inlineMath">$[l, r]$</span>: ищем <span class="inlineMath">$k$</span> по длине отрезка <span class="inlineMath">$r - l$</span>, после чего находим два стандартных отрезка длины <span class="inlineMath">$k$</span>, один из которых начинается в <span class="inlineMath">$l$</span>, а другой заканчивается в <span class="inlineMath">$r$</span>, берем минимум.</p>
+<p>Время: <span class="inlineMath">$(O(n\log n), O(1))$</span>, память: <span class="inlineMath">$O(n\log n)$</span> (<i>заметка:</i> <span class="inlineMath">$O(1)$</span> получается, если мы умеем быстро находить близжайшую степень двойки, решается лио предподсчетом, либо специальной инструкцией процессора).</p>
+<p>Этот подход работает для любых ассоциативных, коммутативных и идемпотентных операций.</p>
+<h4 id="Задача-lca-least-common-ancestor"><a aria-hidden="true" href="#Задача-lca-least-common-ancestor"><span class="icon icon-link"></span></a>Задача LCA (Least Common Ancestor)</h4>
+<p>Есть дерево, хочется отвечать на заросы для любых двух вершин о самом длижайшем общем предке.</p>
+<p>Эту задачу можно свести к RMQ (<a href="http://neerc.ifmo.ru/wiki/index.php?title=%D0%A1%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8_LCA_%D0%BA_%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B5_RMQ">neerc.ifmo</a>):
+1. Пронумеруем вершины (как-нибудь)
+2. Построим <span class="inlineMath">$ET(v)$</span> -- эйлеров обход из вершины <span class="inlineMath">$v$</span>. Запустим DFS и выписываем вершины, в которые мы заходим по ребрам (в обе стороны). Помимо номера вершины, будем записывать и ее глубину. Размер <span class="inlineMath">$|ET(v)| = 2(n-1) + 1 = 2n - 1$</span>.
+3. Заведем массив <span class="inlineMath">$F[i]$</span> -- номер первого вхождения вершины <span class="inlineMath">$i$</span> в обход дерева.
+4. При запросе <span class="inlineMath">$LCA(u, v)$</span> ищем <span class="inlineMath">$\min(F[u], F[v])$</span>, в качестве метрики используя глубину каждой вершины в обходе.</p>
+<p><strong>Замечание:</strong> существует алгоритм для RMQ за <span class="inlineMath">$O(n), O(1)$</span>, <a href="https://neerc.ifmo.ru/wiki/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A4%D0%B0%D1%80%D0%B0%D0%BA%D0%B0-%D0%9A%D0%BE%D0%BB%D1%82%D0%BE%D0%BD%D0%B0_%D0%B8_%D0%91%D0%B5%D0%BD%D0%B4%D0%B5%D1%80%D0%B0">Алгоритм Фарака-Колтона и Бендера</a>.</p>
+<script>
+var terms = {"\u0414\u0435\u0440\u0435\u0432\u043e \u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432": {"wiki": {"type": "standard", "title": "\u0414\u0435\u0440\u0435\u0432\u043e \u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "namespace": {"id": 0, "text": ""}, "titles": {"canonical": "\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "normalized": "\u0414\u0435\u0440\u0435\u0432\u043e \u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "display": "\u0414\u0435\u0440\u0435\u0432\u043e \u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432"}, "revision": "92473781", "tid": "b5de7b30-6f4d-11e8-b732-6b3cf616361f", "description": "\u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u0434\u0430\u043d\u043d\u044b\u0445 \u0432 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438", "content_urls": {"desktop": {"page": "https://ru.wikipedia.org/wiki/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "revisions": "https://ru.wikipedia.org/wiki/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432?action=history", "edit": "https://ru.wikipedia.org/wiki/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432?action=edit", "talk": "https://ru.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432"}, "mobile": {"page": "https://ru.m.wikipedia.org/wiki/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "revisions": "https://ru.m.wikipedia.org/wiki/Special:History/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "edit": "https://ru.m.wikipedia.org/wiki/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432?action=edit", "talk": "https://ru.m.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432"}}, "api_urls": {"summary": "https://ru.wikipedia.org/api/rest_v1/page/summary/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "metadata": "https://ru.wikipedia.org/api/rest_v1/page/metadata/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "references": "https://ru.wikipedia.org/api/rest_v1/page/references/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "media": "https://ru.wikipedia.org/api/rest_v1/page/media/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "edit_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432", "talk_page_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0414\u0435\u0440\u0435\u0432\u043e_\u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432"}, "extract": "\u0414\u0435\u0440\u0435\u0432\u043e \u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432 \u2014 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u0434\u0430\u043d\u043d\u044b\u0445, \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u044e\u0449\u0430\u044f \u0431\u044b\u0441\u0442\u0440\u043e \u0438\u0437\u043c\u0435\u043d\u044f\u0442\u044c \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u0432 \u043c\u0430\u0441\u0441\u0438\u0432\u0435 \u0438 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u044c \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 \u043e\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \n \u043c\u0430\u0441\u0441\u0438\u0432\u0430.", "extract_html": "<p><b>\u0414\u0435\u0440\u0435\u0432\u043e \u043e\u0442\u0440\u0435\u0437\u043a\u043e\u0432</b> \u2014 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u0434\u0430\u043d\u043d\u044b\u0445, \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u044e\u0449\u0430\u044f \u0431\u044b\u0441\u0442\u0440\u043e \u0438\u0437\u043c\u0435\u043d\u044f\u0442\u044c \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u0432 \u043c\u0430\u0441\u0441\u0438\u0432\u0435 \u0438 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u044c \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 \u043e\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 <span class=\"mwe-math-element\"><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/fc498dd18e66b46bc9e51906f14490fbdc49bf8f\" class=\"mwe-math-fallback-image-inline\" aria-hidden=\"true\" style=\"vertical-align:-0.838ex;width:20.348ex;height:2.843ex;\" /></span>\n \u043c\u0430\u0441\u0441\u0438\u0432\u0430.</p>", "wiki_url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%BE%D1%82%D1%80%D0%B5%D0%B7%D0%BA%D0%BE%D0%B2"}}};
+</script>
+
+      
+      <div class="navigation">
+          <a href="lec_2_01.html">← взад</a>
+          <a href="index.html">на главную</a>
+          <a href="lec_2_03.html">вперёд →</a>
+      </div>
+      
+
+      
+  </article>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/popup.js"></script>
+</body>
+</html>

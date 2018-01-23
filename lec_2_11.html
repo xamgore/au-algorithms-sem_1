@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Заголовок</title>
+<!-- Search Engine -->
+<meta name="description" content="Задача (полиномиально проверяемого) поиска  задается предикатом  C(I, S) , где  I  -- условие задачи,  S  -- решение. Условие на них: размер решения являет">
+<meta name="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Заголовок">
+<meta itemprop="description" content="Задача (полиномиально проверяемого) поиска  задается предикатом  C(I, S) , где  I  -- условие задачи,  S  -- решение. Условие на них: размер решения являет">
+<meta itemprop="image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Заголовок">
+<meta name="twitter:description" content="Задача (полиномиально проверяемого) поиска  задается предикатом  C(I, S) , где  I  -- условие задачи,  S  -- решение. Условие на них: размер решения являет">
+<meta name="twitter:image:src" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<!-- Twitter - Article -->
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Заголовок">
+<meta property="og:description" content="Задача (полиномиально проверяемого) поиска  задается предикатом  C(I, S) , где  I  -- условие задачи,  S  -- решение. Условие на них: размер решения являет">
+<meta property="og:image" content="https://demiurg906.github.io/au-algorithms-sem_1/preview.png">
+<meta property="og:type" content="article">
+<!-- Open Graph - Article -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://demiurg906.github.io/au-algorithms-sem_1/assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js" integrity="sha256-MRn7pN9LOBMrkp+8F2t5xb/92V1irzXp/dl5tUTwEgE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/xpath.js" type="text/javascript"></script>
+<script>newIssue="https://github.com/demiurg906/au-algorithms-sem_1/issues/new"</script>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/load.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax:    {
+    inlineMath:  [['$','$'],  ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    displayAlign: "center"
+    // processEscapes: true
+  },
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+  <div id="mistake">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.938 402.938"><path d="M401.785 33.437C399.28 18.683 389.61 16.48 384.07 16.48c-22.935 0-65.053 36.684-109.644 75.52-18.23 15.88-37.083 32.3-53.502 45.048-5.858 4.548-11.803 9.103-18.097 13.924-31.276 23.96-66.726 51.12-94.16 80.356-26.887 28.65-42.593 55.62-47.676 81.98L4.12 364.683c-5.122 4.628-5.523 12.532-.896 17.655 2.468 2.732 5.867 4.12 9.28 4.12 2.987 0 5.984-1.063 8.375-3.223l47.816-43.194c2.31.634 5.016.963 8.19.963 27.39 0 93.534-24.866 153.857-57.84l6.043-3.305L226.11 269.8l17.888 5.932 1.947-1.13c15.867-9.21 30.165-18.41 42.496-27.338 2.19-1.586 4.45-3.292 7.115-5.372l3.87-3.02-11.223-14.93 20.26 7.21 2.218-2.02c15.51-14.13 29.805-30.467 42.486-48.554l2.428-3.462-18.606-18.342 25.257 8.17 2.054-3.37c28.307-46.454 43.02-97.535 37.485-130.137z"/></svg>
+  </div>
+
+  <article class="content">
+      
+
+      
+      <div class="navigation">
+        <a href="lec_2_10.html">← взад</a>
+        <a href="index.html">к оглавлению</a>
+        <a href="None"></a>
+      </div>
+      
+      <h1 id="np-полные-задачи"><a aria-hidden="true" href="#np-полные-задачи"><span class="icon icon-link"></span></a>NP-полные задачи</h1>
+<p><strong>Задача (полиномиально проверяемого) поиска</strong> задается предикатом <span class="inlineMath">$C(I, S)$</span>, где <span class="inlineMath">$I$</span> -- условие задачи, <span class="inlineMath">$S$</span> -- решение. Условие на них: размер решения является полиномом от размера условия, существует алгоритм <span class="inlineMath">$A_C(I, S)$</span>, который по данному условию и решению за полиномиальное время вычисляет <span class="inlineMath">$C(I, S)$</span> (т.е. правильное решение или нет). Поиск гамильтонова цикла -- пример такой задачи.</p>
+<p>Класс таких задач называется <strong>NP</strong>.</p>
+<p><strong>Определение:</strong> класс задач поиска, для которых также существует полиномиальный алгоритм <span class="inlineMath">$B_C(I) \rightarrow S$</span>, который по условию выдает решение за полиномиальное время называется <strong>P</strong>.</p>
+<p>Отсюда очевидно вытекает, что <span class="inlineMath">$P \subseteq NP$</span>.</p>
+<p><strong>Задача разрешения:</strong> задача, которая проверяет, существует ли такое <span class="inlineMath">$S$</span>, что <span class="inlineMath">$C(I, S)$</span>.</p>
+<p><strong>Утверждение:</strong> если научиться решать задачу разрешения, то тогда научимся решать задачу поиска, т.е. по <span class="inlineMath">$I$</span> находить <span class="inlineMath">$S$</span> за полином.
+<strong>Доказательство:</strong>
+Допустим, у нас есть алгоритм <span class="inlineMath">$H$</span>, который для графа <span class="inlineMath">$G$</span> говорит, есть в нем гамильтонов цикл или нет. Допустим, что в <span class="inlineMath">$G$</span> цикл есть. Тогда выкинем из <span class="inlineMath">$G$</span> ребро <span class="inlineMath">$e$</span> и скормим это алгоритму:</p>
+<ul>
+<li>в графе без ребра цикл есть. Тогда это ребро циклу не принадлежит</li>
+<li>в графе без ребра цикла нет. Тогда это ребро принадлежит циклу.
+Эта штука называется <strong>сводимость</strong>.</li>
+</ul>
+<h3 id="Всякие-np-полные-задачи"><a aria-hidden="true" href="#Всякие-np-полные-задачи"><span class="icon icon-link"></span></a>Всякие NP-полные задачи</h3>
+<table>
+<thead>
+<tr>
+<th align="left">NP-полная задача</th>
+<th align="left">Похожая задача, решать умеем</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Гамильтонов путь/цикл</td>
+<td align="left">Эйлеров путь/цикл</td>
+</tr>
+<tr>
+<td align="left">Задача коммивояжера
+<br>
+Существует ли путь стоимости 
+<span class="inlineMath">$\leq k$</span>
+?</td>
+<td align="left">Минимальное остовное дерево</td>
+</tr>
+<tr>
+<td align="left">Задача выполнимости (SAT)
+<br>
+Есть конъюнкция дизъюнктов от 
+<span class="inlineMath">$n$</span>
+ (КНФ) переменных,
+<br>
+надо найти выполняющий набор переменых</td>
+<td align="left">Выполнимость дизъюнктов Хорна
+<br>
+Формула с дизъюнктами размер 
+<span class="inlineMath">$\leq 2$</span>
+ (2-SAT)</td>
+</tr>
+<tr>
+<td align="left">3-выполнимость (3-SAT)
+<br>
+Сложная, даже если любая переменная встречается 
+<span class="inlineMath">$\geq 3$</span>
+ раз</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Раскраска графа в 
+<span class="inlineMath">$k\geq 3$</span>
+ цветов</td>
+<td align="left">2-раскраска графа</td>
+</tr>
+<tr>
+<td align="left">Целочисленное линейное программирование (ILP)</td>
+<td align="left">Простое линейное программирование</td>
+</tr>
+<tr>
+<td align="left">Поиск 
+<span class="inlineMath">$k$</span>
+-клики</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Поиск независимого покрывающего множества размера 
+<span class="inlineMath">$k$</span></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Длиннейший путь в графе  (путь длины 
+<span class="inlineMath">$\geq k$</span>
+)</td>
+<td align="left">Кратчайший путь</td>
+</tr>
+<tr>
+<td align="left">Сбалансированный разрез
+<br>
+На размеры долей заданно соотношение</td>
+<td align="left">Минимальный разрез</td>
+</tr>
+</tbody>
+</table>
+<p>К слову, задача коммивояжера в классической постановке (найти минимальный путь) не принадлежит к NP, так как по данному пути за полином не проверить, что в графе нет путей меньшей стоимости.</p>
+<p><strong>Великий вопрос P, NP и всего остального:</strong> равны ли <span class="inlineMath">$P$</span> и <span class="inlineMath">$NP$</span>? <i>вопрос на миллион</i></p>
+<h2 id="Сведение"><a aria-hidden="true" href="#Сведение"><span class="icon icon-link"></span></a>Сведение</h2>
+<p>Есть две задачи <span class="inlineMath">$A$</span> и <span class="inlineMath">$B$</span> с соответствующими предикатами: <span class="inlineMath">$C_A(I_A, S_A)$</span> и <span class="inlineMath">$C_B(I_B, S_B)$</span></p>
+<p>Задача <span class="inlineMath">$A$</span> сводится к <span class="inlineMath">$B$</span> (<span class="inlineMath">$A \preceq B$</span>) если существует полиномиально вычислимые функции <span class="inlineMath">$f: I_A\rightarrow I_B$</span> и <span class="inlineMath">$g: S_B \rightarrow S_A$</span> такие, что:</p>
+<ul>
+<li>для любого <span class="inlineMath">$I_A$</span> существование решения <span class="inlineMath">$\exists S_A:\ C_A(I_A, S_A) \Leftrightarrow \exists S_B:\ C_B(f(I_A), S_B)$</span></li>
+<li><span class="inlineMath">$\forall I_A \forall S_B:\ \ C_A(I_A, g(S_B)) \Leftrightarrow C_B(f(I_A), S_B)$</span></li>
+</ul>
+<p>Как решить <span class="inlineMath">$A$</span>, умея решать <span class="inlineMath">$B$</span>: берем условие <span class="inlineMath">$I_A$</span>, превращаем его в <span class="inlineMath">$I_B$</span>, решаем задачу <span class="inlineMath">$B$</span>, ее результат перегоняем в решение <span class="inlineMath">$S_A$</span>.</p>
+<p><strong>Утверждение:</strong> если <span class="inlineMath">$A$</span> решается за полином и <span class="inlineMath">$B$</span> сводится к <span class="inlineMath">$A$</span>, то <span class="inlineMath">$A$</span> также решается за полином.</p>
+<p><strong>Утверждение:</strong> <span class="inlineMath">$A\rightarrow B,\ \ B\rightarrow C\Rightarrow A \rightarrow C$</span></p>
+<p><strong>Определение:</strong> задача <span class="inlineMath">$A$</span> называется <strong>NP-трудной</strong>, если любая другая задача из NP сводится к <span class="inlineMath">$A$</span>, т.е. <span class="inlineMath">$A$</span> не проще никакой другой задачи из <span class="inlineMath">$NP$</span>, при этом <span class="inlineMath">$A$</span> может и не принадлежать к <span class="inlineMath">$NP$</span>.</p>
+<p><strong>Опредление:</strong> задача <span class="inlineMath">$A$</span> называется <strong>NP-полной</strong>, если <span class="inlineMath">$A\in NP$</span> и любая задача из <span class="inlineMath">$NP$</span> сводится к <span class="inlineMath">$A$</span>.</p>
+<p>Пример <i>NP-трудной</i> задачи -- коммивояжер в формулировке <i>найти минимальный путь</i>.</p>
+<p><strong>Факт:</strong> если <span class="inlineMath">$P\neq NP$</span>, то существуют задачи из <span class="inlineMath">$NP\setminus P$</span>, которые не являются NP-полными (т.е. не любу задачу из NP можно свести к ним) и наоборот. Претендентами на такие задачи являются факторизация числа на простые множители и проверка двух графов на изоморфизм.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/P_np_np-complete_np-hard.svg/800px-P_np_np-complete_np-hard.svg.png"></p>
+<h3 id="Теорема-Кука-Левина"><a aria-hidden="true" href="#Теорема-Кука-Левина"><span class="icon icon-link"></span></a>Теорема Кука-Левина</h3>
+<p><a class="term">Теорема Кука-Левина</a> гласит, что задача <i>Circuit SAT</i> NP-полна.</p>
+<p><strong>Circuit SAT</strong>
+<img src="images/lec_2_11_1.png"></p>
+<p>Надо проверить, есть ли набор переменных, дающих в итоге единичку.</p>
+<p>Очевидно, что все задачи SAT семейства сводятся к Circuit SAT.</p>
+<p>Пусть <span class="inlineMath">$A \in NP\Rightarrow\exists C_A(I_A, S_A)$</span> и алгоритм <span class="inlineMath">$\mathcal{A}$</span> для <span class="inlineMath">$C_A$</span></p>
+<p><strong>Утверждение:</strong> вычисление алгоритма <span class="inlineMath">$\mathcal{A}$</span> на входе длины <span class="inlineMath">$n$</span> можно записать схемой полиномиального размера за полиномиальное время. <i>просто поверьте в это. ключевые слова: компьютер, логическая схема</i></p>
+<p>По утверждению у нас получается некая схема, которая на вход принимает сколько-то битиков, соответствующих условию <span class="inlineMath">$I_A$</span>, и еще сколько-то, соответствующих решению <span class="inlineMath">$S_A$</span>.</p>
+<p>Теперь нам нужна функция <span class="inlineMath">$f:I_A\rightarrow I_{SAT}$</span>. Пусть эта задача захардкодим битики <span class="inlineMath">$I_A$</span> в схему, получим задачу для Circuit SAT.
+Функция <span class="inlineMath">$g$</span> также простая: парсим значение для <span class="inlineMath">$S_A$</span> из получившихся битиков.</p>
+<h3 id="circuit-sat-→-sat-3-sat"><a aria-hidden="true" href="#circuit-sat-→-sat-3-sat"><span class="icon icon-link"></span></a>Circuit SAT → SAT (3-SAT)</h3>
+<p>Для каждого гейта заводим переменную. Например, для гейта AND со входами <span class="inlineMath">$h_1$</span>, <span class="inlineMath">$h_2$</span> заводим дизъюнкты <span class="inlineMath">$((h_1\land h_2)\to g), (g \to h_1), (g \to h_2)$</span>.</p>
+<p>Т.к. литералов всего 3, получили 3-SAT</p>
+<h3 id="3-sat-→-independent-set-is"><a aria-hidden="true" href="#3-sat-→-independent-set-is"><span class="icon icon-link"></span></a>3-SAT → Independent Set (IS)</h3>
+<p>Для каждого дизъюнкта строим треугольник из трех вершин, соответствующих переменным в дизъюнкте. Все <span class="inlineMath">$x$</span> соединим со всеми <span class="inlineMath">$\lnot x$</span> и т.д. Строим независимое множество. Если нашлось множество по размеру количества дизъюнктов, то бинго, мы нашли выполняющий набор (т.к. в независимом множестве не могут лежать одновременно <span class="inlineMath">$x$</span> и <span class="inlineMath">$\lnot x$</span>). Если <span class="inlineMath">$x$</span> и <span class="inlineMath">$\lnot x$</span> не входят в независимое множество, то им можно приписать любое значение.</p>
+<script>
+var terms = {"\u0422\u0435\u043e\u0440\u0435\u043c\u0430 \u041a\u0443\u043a\u0430-\u041b\u0435\u0432\u0438\u043d\u0430": {"wiki": {"type": "standard", "title": "\u0422\u0435\u043e\u0440\u0435\u043c\u0430 \u041a\u0443\u043a\u0430 \u2014 \u041b\u0435\u0432\u0438\u043d\u0430", "namespace": {"id": 0, "text": ""}, "titles": {"canonical": "\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430", "normalized": "\u0422\u0435\u043e\u0440\u0435\u043c\u0430 \u041a\u0443\u043a\u0430 \u2014 \u041b\u0435\u0432\u0438\u043d\u0430", "display": "\u0422\u0435\u043e\u0440\u0435\u043c\u0430 \u041a\u0443\u043a\u0430 \u2014 \u041b\u0435\u0432\u0438\u043d\u0430"}, "revision": "91958898", "tid": "a09cd925-3bbf-11e8-be0c-ac34bed813b2", "content_urls": {"desktop": {"page": "https://ru.wikipedia.org/wiki/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430", "revisions": "https://ru.wikipedia.org/wiki/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430?action=history", "edit": "https://ru.wikipedia.org/wiki/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430?action=edit", "talk": "https://ru.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430"}, "mobile": {"page": "https://ru.m.wikipedia.org/wiki/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430", "revisions": "https://ru.m.wikipedia.org/wiki/Special:History/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430", "edit": "https://ru.m.wikipedia.org/wiki/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430?action=edit", "talk": "https://ru.m.wikipedia.org/wiki/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430"}}, "api_urls": {"summary": "https://ru.wikipedia.org/api/rest_v1/page/summary/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430", "edit_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430", "talk_page_html": "https://ru.wikipedia.org/api/rest_v1/page/html/\u041e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u0435:\u0422\u0435\u043e\u0440\u0435\u043c\u0430_\u041a\u0443\u043a\u0430_\u2014_\u041b\u0435\u0432\u0438\u043d\u0430"}, "extract": "\u0422\u0435\u043e\u0440\u0435\u043c\u0430 \u041a\u0443\u043a\u0430 \u2014 \u041b\u0435\u0432\u0438\u043d\u0430 \u0443\u0442\u0432\u0435\u0440\u0436\u0434\u0430\u0435\u0442, \u0447\u0442\u043e \u0437\u0430\u0434\u0430\u0447\u0430 \u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0438\u043c\u043e\u0441\u0442\u0438 \u0431\u0443\u043b\u0435\u0432\u043e\u0439 \u0444\u043e\u0440\u043c\u0443\u043b\u044b \u0432 \u041a\u041d\u0424 (SAT) \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f NP-\u043f\u043e\u043b\u043d\u043e\u0439.", "extract_html": "<p><b>\u0422\u0435\u043e\u0440\u0435\u043c\u0430 \u041a\u0443\u043a\u0430 \u2014 \u041b\u0435\u0432\u0438\u043d\u0430</b> \u0443\u0442\u0432\u0435\u0440\u0436\u0434\u0430\u0435\u0442, \u0447\u0442\u043e \u0437\u0430\u0434\u0430\u0447\u0430 \u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0438\u043c\u043e\u0441\u0442\u0438 \u0431\u0443\u043b\u0435\u0432\u043e\u0439 \u0444\u043e\u0440\u043c\u0443\u043b\u044b \u0432 \u041a\u041d\u0424 (SAT) \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f NP-\u043f\u043e\u043b\u043d\u043e\u0439.</p>", "wiki_url": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%9A%D1%83%D0%BA%D0%B0_%E2%80%94_%D0%9B%D0%B5%D0%B2%D0%B8%D0%BD%D0%B0"}}};
+</script>
+
+      
+      <div class="navigation">
+          <a href="lec_2_10.html">← взад</a>
+          <a href="index.html">на главную</a>
+          <a href="None"></a>
+      </div>
+      
+
+      
+  </article>
+<script src="https://demiurg906.github.io/au-algorithms-sem_1/assets/popup.js"></script>
+</body>
+</html>
