@@ -18,6 +18,7 @@ cache:
 before_script:
   - (cd conspectus-framework/ast && yarn)
   - (cd conspectus-framework/telegram && yarn)
-  - sudo chmod +x ./conspectus-framework/script/build.sh
+  - sudo chmod +x ./conspectus-framework/script/clone_repo.sh
+  - sudo chmod +x ./conspectus-framework/script/push_and_notify.sh
 
 script: python3 ./conspectus-framework/script/build.py
