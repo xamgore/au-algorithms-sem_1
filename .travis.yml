@@ -22,3 +22,7 @@ before_script:
   - sudo chmod +x ./conspectus-framework/script/push_and_notify.sh
 
 script: python3 ./conspectus-framework/script/build.py
+
+notifications:
+    email:
+        on_success: always
